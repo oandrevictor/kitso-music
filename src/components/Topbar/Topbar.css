@@ -1,0 +1,30 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+}
+.toolbar .ant-menu {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+
+.toolbar .logo {
+  display: inline-block;
+  padding-left: 8vw;
+  position: absolute;
+}
+
+.logo b {
+  color: #f5222d;
+}
+
+.logout-area {
+  position: absolute;
+  right: 0px;
+  padding-right: 8vw;
+}
+
+.logout-area p {
+  display: inline;
+  padding-right: 4px;
+}

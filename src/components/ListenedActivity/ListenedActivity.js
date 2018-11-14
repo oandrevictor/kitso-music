@@ -62,6 +62,8 @@ class ListenedActivity extends Component {
     ) : null;
 
     return (
+      <div className="listened-activity">
+      <h1 className="item-title">Last listened</h1>
       <List
         className="demo-loadmore-list"
         loading={initLoading}
@@ -83,6 +85,7 @@ class ListenedActivity extends Component {
           </List.Item>
         )}
       />
+      </div>
     );
   }
 }

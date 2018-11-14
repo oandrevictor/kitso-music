@@ -1,0 +1,34 @@
+.ant-carousel .slick-slide {
+  line-height: 120px;
+  height: 318px;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.card-wrapper .ant-card {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ant-carousel .slick-dots li button {
+  background: blue
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+    background: blue;
+    opacity: 1;
+    width: 24px;
+}
+
+.ant-card-cover img {
+  height: 180px;
+  object-fit: cover;
+}
+
+
+.favorite-albuns {
+  padding: 10px 20px 20px 20px;
+  padding-top: 20px;
+}

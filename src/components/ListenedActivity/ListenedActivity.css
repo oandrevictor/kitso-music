@@ -1,5 +1,16 @@
 .demo-loadmore-list {
   min-height: 350px;
   background: white;
+}
+.listened-activity {
   padding: 10px 20px 20px 20px;
+  padding-top: 20px;
+}
+.listened-activity p, div {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+}
+.item-title {
+  font-weight: 600;
 }
