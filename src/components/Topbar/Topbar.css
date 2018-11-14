@@ -28,3 +28,13 @@
   display: inline;
   padding-right: 4px;
 }
+
+.ant-menu-item-selected {
+    border-color: #f5222d !important;
+    color: #f5222d !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover {
+  border-bottom: 2px solid #ff4d4f;
+  color: #ff4d4f;
+}

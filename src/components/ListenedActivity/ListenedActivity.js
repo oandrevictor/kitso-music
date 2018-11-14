@@ -74,7 +74,7 @@ class ListenedActivity extends Component {
           <List.Item actions={[<a>edit</a>, <a>more</a>]}>
             <Skeleton avatar title={false} loading={item.loading} active>
               <List.Item.Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                avatar={<Avatar src="https://images-na.ssl-images-amazon.com/images/I/71eOtvpkeWL.png" />}
                 title={<a href="https://ant.design">{item.name.last}</a>}
                 description={<p>a song by <a href="https://ant.design">{item.name.first}</a> from <a href="https://ant.design">{item.location.city}</a></p>}
               />
