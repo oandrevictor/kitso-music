@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
 import './Topbar.css';
+import { Router, Link } from 'react-router-dom'
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -30,10 +31,14 @@ class Topbar extends Component {
           <Icon type="home" />
         </Menu.Item>
         <Menu.Item key="fire">
+        <Link to="/trending">
           <Icon type="fire" />
+        </Link>
         </Menu.Item>
         <Menu.Item key="profile">
+        <Link to="/profile">
           <Icon type="user" />
+        </Link>
         </Menu.Item>
       </Menu>
       <div className="logout-area">

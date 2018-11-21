@@ -5,8 +5,9 @@ import 'antd/dist/antd.css';
 import ListenedActivity from './components/ListenedActivity/ListenedActivity';
 import FavoriteAlbuns from './components/FavoriteAlbuns/FavoriteAlbuns';
 import Topbar from './components/Topbar/Topbar';
-import ProfileHeader from './components/ProfileHeader/ProfileHeader';
-import { Row, Col } from 'antd';
+import Profile from './components/Profile/Profile';
+
+import { Row, Col, Layout } from 'antd';
 
 
 class App extends Component {
@@ -14,16 +15,7 @@ class App extends Component {
     return (
       <div className="App">
       <Topbar />
-      <ProfileHeader />
-      <Row>
-       <Col span={12}>
-        <ListenedActivity />
-      </Col>
-      <Col span={12}>
-       <FavoriteAlbuns />
-     </Col>
-
-      </Row>
+      <Profile />
       </div>
     );
   }
