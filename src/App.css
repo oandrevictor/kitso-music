@@ -35,3 +35,16 @@
 a {
   color: #f5222d !important;
 }
+.centered {
+  text-align: center;
+}
+
+.ant-btn-primary {
+  background-color: #ff4d4f !important;
+  border-color: #f5222d !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #fb6c6e !important;
+    border-color: #f5222d !important;
+}

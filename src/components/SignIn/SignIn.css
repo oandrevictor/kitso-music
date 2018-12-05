@@ -1,0 +1,32 @@
+.sign-in-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(-50%, -50%);
+
+
+}
+.sign-in {
+  width: 100%;
+  position: relative;
+  height: calc(100vh - 50px);
+  background: url('https://i.pinimg.com/originals/66/4f/9e/664f9e0b4745bae274645fd96c50ed04.jpg');
+  background-size: cover;
+}
+.sign-in-title {
+  text-align: center;
+}
+
+.login-form a {
+  color: rgba(0, 0, 0, 0.65) !important;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.sign-in-form {
+  background: #fafafae3;
+  padding: 28px 20px 0px 20px;
+  border-radius: 4px;
+}

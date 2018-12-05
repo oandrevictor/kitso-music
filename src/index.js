@@ -7,6 +7,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Topbar from './components/Topbar/Topbar';
 import Profile from './components/Profile/Profile';
 import Trending from './components/Trending/Trending';
+import SignIn from './components/SignIn/SignIn';
 
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
     <div>
       <Topbar />
         <Switch>
+            <Route path="/login" component={SignIn} />
             <Route path="/profile" component={Profile} />
             <Route path="/trending" component={Trending} />
         </Switch>

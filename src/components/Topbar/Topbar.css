@@ -1,6 +1,7 @@
 .toolbar {
   display: flex;
   align-items: center;
+  height: 50px;
 }
 .toolbar .ant-menu {
   margin-left: auto;
