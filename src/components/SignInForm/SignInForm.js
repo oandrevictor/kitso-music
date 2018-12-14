@@ -2,6 +2,9 @@ import './SignInForm.css';
 import React, { Component } from 'react';
 import { Row, Col, Layout, Form, Icon, Input, Button, Checkbox, } from 'antd';
 import axios from 'axios';
+import  { Redirect } from 'react-router-dom'
+
+
 
 const FormItem = Form.Item;
 
@@ -12,17 +15,28 @@ class SignInForm extends Component {
       userName: '',
     };
     this.toggleShowSignUp = this.toggleShowSignUp.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
-  handleSubmit = (e) => {
+  handleSubmit(e){
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
-        axios.post('https://kitso-music-api.herokuapp.com/auth', values, {headers: {'Content-Type': 'application/json'}})
+        axios.post('https://kitso-music-api.herokuapp.com/auth', values, {headers: {'Content-Type': 'application/json'}, withCredentials: true})
       .then(res => {
         console.log(res);
         console.log(res.data);
+        axios.get('https://kitso-music-api.herokuapp.com/auth', {headers: {'Content-Type': 'application/json'}, withCredentials: true})
+        .then(res => {
+          if (res.data.status){
+            localStorage.setItem('current_user', JSON.stringify(res.data.user));
+
+            this.redirect()
+
+          }
+        })
       })
 
       }
@@ -30,6 +44,9 @@ class SignInForm extends Component {
   }
   toggleShowSignUp(){
     this.props.toggleShowSignUp();
+  }
+  redirect(){
+    this.props.redirect();
   }
 
     render() {

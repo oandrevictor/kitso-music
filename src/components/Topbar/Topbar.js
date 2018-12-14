@@ -18,6 +18,11 @@ class Topbar extends Component {
     });
   }
 
+  logOut = () => {
+    localStorage.setItem("current_user", false)
+    console.log("aaa")
+  }
+
   render() {
     return (
       <div className="toolbar">
@@ -41,7 +46,7 @@ class Topbar extends Component {
         </Link>
         </Menu.Item>
       </Menu>
-      <div className="logout-area">
+      <div className="logout-area" onClick={this.logOut}>
         <p>Logout </p>
         <Icon type="logout" />
       </div>

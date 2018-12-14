@@ -23,6 +23,7 @@
   position: absolute;
   right: 0px;
   padding-right: 8vw;
+  cursor: pointer;
 }
 
 .logout-area p {

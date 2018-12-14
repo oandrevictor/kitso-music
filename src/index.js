@@ -3,21 +3,36 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Topbar from './components/Topbar/Topbar';
 import Profile from './components/Profile/Profile';
 import Trending from './components/Trending/Trending';
 import SignIn from './components/SignIn/SignIn';
 
+function requireAuth(component){
+  if (!JSON.parse(localStorage.getItem("current_user"))){
+    return(<Redirect to="/login"/>)
+  }else {
+    return(component)
+  }
+}
+
+function notLoggedOnly(component){
+  if (JSON.parse(localStorage.getItem("current_user"))){
+    return(<Redirect to="/"/>)
+  }else {
+    return(component)
+  }
+}
 
 ReactDOM.render(
   <div>
-    <BrowserRouter>
+    <BrowserRouter >
     <div>
       <Topbar />
         <Switch>
-            <Route path="/login" component={SignIn} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/login" render={()=> notLoggedOnly(<SignIn />)} />
+            <Route path="/profile" render={()=> requireAuth(<Profile />)}/>
             <Route path="/trending" component={Trending} />
         </Switch>
         </div>

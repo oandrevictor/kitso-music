@@ -13,6 +13,7 @@ class SignIn extends Component {
     super(props)
     this.state = { showSignup: false }
     this.toggleShowSignUp = this.toggleShowSignUp.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   toggleShowSignUp(){
@@ -21,6 +22,9 @@ class SignIn extends Component {
     }));
   }
 
+  redirect(){
+    this.props.history.push('/profile')
+  }
 
   render() {
     return (
@@ -31,7 +35,7 @@ class SignIn extends Component {
           </div>
           { !this.state.showSignup &&
           <div className="sign-in-form">
-            <SignInForm toggleShowSignUp={this.toggleShowSignUp}/>
+            <SignInForm toggleShowSignUp={this.toggleShowSignUp} redirect={this.redirect}/>
           </div> }
           { this.state.showSignup &&
           <div className="sign-in-form">
