@@ -9,7 +9,6 @@ import Profile from './components/Profile/Profile';
 
 import { Row, Col, Layout } from 'antd';
 
-
 class App extends Component {
   render() {
     return (

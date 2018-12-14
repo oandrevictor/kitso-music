@@ -1,0 +1,10 @@
+.submit-area .submit-button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+
+.submit-area .ant-form-item-children {
+  display:flex;
+}

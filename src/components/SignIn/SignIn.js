@@ -3,7 +3,6 @@ import ListenedActivity from '../ListenedActivity/ListenedActivity';
 import FavoriteAlbuns from '../FavoriteAlbuns/FavoriteAlbuns';
 import SignInForm from '../SignInForm/SignInForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
-
 import { Row, Col, Layout } from 'antd';
 import './SignIn.css';
 
