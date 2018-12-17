@@ -6,7 +6,7 @@ O Kitso Music é uma plataforma que permite ao usuário gerenciar o que ele ouvi
 
 ## O que dá pra fazer na versão atual?
 * Registro e login (/login)
-* Visualizar e criar novos artistas ou albuns (/trending)
+* Visualizar e criar novos artistas, albuns ou músicas (/trending)
 * Visualização de perfil mockado (/profile)
 
 
