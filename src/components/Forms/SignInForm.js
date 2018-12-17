@@ -32,9 +32,7 @@ class SignInForm extends Component {
         .then(res => {
           if (res.data.status){
             localStorage.setItem('current_user', JSON.stringify(res.data.user));
-
             this.redirect()
-
           }
         })
       })

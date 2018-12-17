@@ -5,9 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Topbar from './components/Topbar/Topbar';
-import Profile from './components/Profile/Profile';
-import Trending from './components/Trending/Trending';
-import SignIn from './components/SignIn/SignIn';
+import Profile from './components/Mains/Profile/Profile';
+import Trending from './components/Mains/Trending/Trending';
+import SignIn from './components/Mains/SignIn/SignIn';
 
 function requireAuth(component){
   if (!JSON.parse(localStorage.getItem("current_user"))){
@@ -25,6 +25,14 @@ function notLoggedOnly(component){
   }
 }
 
+function loggedOrNotLogged(logged, not_logged){
+  if (JSON.parse(localStorage.getItem("current_user"))){
+    return(<Redirect to={logged}/>)
+  }else {
+    return(<Redirect to={not_logged}/>)
+  }
+}
+
 ReactDOM.render(
   <div>
     <BrowserRouter >
@@ -33,7 +41,9 @@ ReactDOM.render(
         <Switch>
             <Route path="/login" render={()=> notLoggedOnly(<SignIn />)} />
             <Route path="/profile" render={()=> requireAuth(<Profile />)}/>
-            <Route path="/trending" component={Trending} />
+            <Route path="/trending" render={()=> requireAuth(<Trending />)}/>
+            <Route path="/" render={()=> loggedOrNotLogged("/profile", "/login")}/>
+
         </Switch>
         </div>
     </ BrowserRouter>

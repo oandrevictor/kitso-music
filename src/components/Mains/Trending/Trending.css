@@ -1,0 +1,11 @@
+.trending-wrapper {
+  background: #fafafa;
+  padding: 22px 18px;
+}
+.trending-wrapper h1 {
+  font-weight: 300;
+}
+
+.card-row {
+  padding-top: 12px;
+}

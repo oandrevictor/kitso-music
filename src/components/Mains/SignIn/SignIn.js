@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ListenedActivity from '../ListenedActivity/ListenedActivity';
-import FavoriteAlbuns from '../FavoriteAlbuns/FavoriteAlbuns';
-import SignInForm from '../SignInForm/SignInForm';
-import SignUpForm from '../SignUpForm/SignUpForm';
+import ListenedActivity from '../../ListenedActivity/ListenedActivity';
+import FavoriteAlbuns from '../../FavoriteAlbuns/FavoriteAlbuns';
+import SignInForm from '../../Forms/SignInForm';
+import SignUpForm from '../../Forms/SignUpForm';
 import { Row, Col, Layout } from 'antd';
 import './SignIn.css';
 
@@ -22,7 +22,7 @@ class SignIn extends Component {
   }
 
   redirect(){
-    this.props.history.push('/profile')
+    window.location.replace("/profile")
   }
 
   render() {

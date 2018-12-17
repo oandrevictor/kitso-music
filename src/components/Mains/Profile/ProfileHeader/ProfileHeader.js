@@ -13,10 +13,10 @@ class ProfileHeader extends Component {
         </div>
         <div className="user-info">
         <h1 className="user-name">
-          André Lopes
+          {this.props.user.name}
         </h1>
         <p className="user-username">
-        @oandrevictor
+        @{this.props.user.username}
         </p>
         </div>
       </div>

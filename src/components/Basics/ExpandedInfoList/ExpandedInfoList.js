@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { List, Avatar, Icon } from 'antd';
+import './ExpandedInfoList.css';
 
 class ExpandedList extends Component {
+  constructor(props){
+    super(props)
+    this.state = {}
+  }
+
+
   state = {
     initLoading: true,
     loading: false,
@@ -40,22 +47,21 @@ class ExpandedList extends Component {
       onChange: (page) => {
         console.log(page);
       },
-      pageSize: 3,
+      pageSize: 5,
     }}
-    dataSource={this.state.listData}
-    footer={<div><b>ant design</b> footer part</div>}
+    dataSource={this.props.dataSource}
     renderItem={item => (
       <List.Item
-        key={item.title}
-        actions={[<IconText type="star-o" text="156" />, <IconText type="like-o" text="156" />, <IconText type="message" text="2" />]}
-        extra={<img width={272} alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />}
+        key={item.name}
+        extra={<img alt="logo" src={item.fallback_image} />}
       >
         <List.Item.Meta
-          avatar={<Avatar src={item.avatar} />}
-          title={<a href={item.href}>{item.title}</a>}
-          description={item.description}
+          avatar={<Avatar src={item.fallback_image} />}
+          title={<a href={item.href}>{item.name}</a>}
+          description= {item.bio}
         />
-        {item.content}
+
+          {item.content}
       </List.Item>
     )}
   />

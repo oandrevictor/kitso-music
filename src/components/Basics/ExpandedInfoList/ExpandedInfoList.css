@@ -1,0 +1,20 @@
+.ant-list {
+  padding-left: 28px;
+  padding-right: 27px;
+}
+
+.ant-list-item-extra img {
+  object-fit: cover;
+  height: 200px !important;
+  border-radius: 5px;
+}
+
+.ant-list-item-meta-description {
+  height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+}
+
+.ant-card .ant-card-bordered .ant-card-hoverable{
+  width: auto !important;
+}

@@ -8,19 +8,27 @@ const MenuItemGroup = Menu.ItemGroup;
 
 class Topbar extends Component {
   state = {
-    current: 'profile',
+    current: this.getCurrentPage(),
   }
 
   handleClick = (e) => {
-    console.log('click ', e);
     this.setState({
       current: e.key,
     });
   }
 
+  getCurrentPage(){
+    var current = window.document.location.pathname
+    if (current == '/profile') {
+      return 'profile'
+    }else if (current == '/trending'){
+      return 'trending'
+    }
+  }
+
   logOut = () => {
     localStorage.setItem("current_user", false)
-    console.log("aaa")
+    window.location.replace("/")
   }
 
   render() {
@@ -35,7 +43,7 @@ class Topbar extends Component {
         <Menu.Item key="home">
           <Icon type="home" />
         </Menu.Item>
-        <Menu.Item key="fire">
+        <Menu.Item key="trending">
         <Link to="/trending">
           <Icon type="fire" />
         </Link>
