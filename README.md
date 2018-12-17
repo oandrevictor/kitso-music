@@ -21,5 +21,6 @@ npm start
 npm test
 ```
 
-[Repositório backend](https://github.com/gabriela-motta/devweb-api "devweb-api")
-[Backend online](https://github.com/oandrevictor/kitso-music-api)
+[Repositório backend](https://github.com/oandrevictor/kitso-music-api)
+
+[Backend online](http://kitso-music-api.herokuapp.com)
