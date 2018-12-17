@@ -20,15 +20,8 @@ it("always renders a div", () => {
 describe("the rendered div", () => {
   it("contains everything else that gets rendered", () => {
     const divs = wrapper.find('div')
-    // When using .find, enzyme arranges the nodes in order such
-    // that the outermost node is first in the list. So we can
-    // use .first() to get the outermost div.
     const wrappingDiv = divs.first();
 
-    // Enzyme omits the outermost node when using the .children()
-    // method on lockScreen(). This is annoying, but we can use it
-    // to verify that wrappingDiv contains everything else this
-    // component renders.
     expect(wrappingDiv.children()).toEqual(wrapper.children());
   });
 });
