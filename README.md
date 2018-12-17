@@ -7,7 +7,12 @@ O Kitso Music é uma plataforma que permite ao usuário gerenciar o que ele ouvi
 ## O que dá pra fazer na versão atual?
 * Registro e login (/login)
 * Visualizar e criar novos artistas, albuns ou músicas (/trending)
+* Visualizar informaçes específicas sobre uma música (/music/id)
 * Visualização de perfil mockado (/profile)
+
+## Conta para testes
+login: abcde
+senha: 123456a
 
 ### Como executar a aplicação?:
 É possível acessar a aplicação pelo site https://kitsomusic.herokuapp.com/ ou rodando localmente com os seguintes comandos:
