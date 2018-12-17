@@ -18,7 +18,7 @@ class SongForm extends Component {
   }
 
   handleSubmit(e){
-    e.preventDefault();
+    if (e) e.preventDefault();
     this.props.form.validateFields((err, values) => {
       values._performers = [values._performer]
       values._albuns = [values._album]
@@ -44,6 +44,11 @@ class SongForm extends Component {
   componentDidMount() {
     this.updatePerformers();
     this.updateAlbuns();
+    this.props.onRef(this);
+  }
+
+  componentWillUnmount() {
+    this.props.onRef(undefined)
   }
 
   getData = (url, callback) => {
@@ -136,12 +141,6 @@ class SongForm extends Component {
             }
             </Select>
           )}
-          </FormItem>
-
-          <FormItem>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Create
-            </Button>
           </FormItem>
         </Form>
       );

@@ -6,7 +6,8 @@ import SongForm from '../../Forms/SongForm';
 
 class FormModal extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
+    this.child = React.createRef();
   }
 
   state = {
@@ -32,6 +33,10 @@ class FormModal extends React.Component {
     }, 2000);
   }
 
+  childSubmit = () => {
+    this.child.handleSubmit();
+  }
+
   handleCancel = () => {
     console.log('Clicked cancel button');
     this.setState({
@@ -47,15 +52,15 @@ class FormModal extends React.Component {
           +
         </Button>
         <Modal
-          title="New Artist"
+          title={this.props.title}
           visible={visible}
-          onOk={this.handleOk}
+          onOk={this.childSubmit}
           confirmLoading={confirmLoading}
           onCancel={this.handleCancel}
         >
-          { this.props.isArtistForm && <ArtistForm updateCallBack={this.props.updateCallBack} handleOk={this.handleOk}/>}
-          { this.props.isAlbumForm && <AlbumForm updateCallBack={this.props.updateCallBack} handleOk={this.handleOk}/>}
-          { this.props.isSongForm && <SongForm updateCallBack={this.props.updateCallBack} handleOk={this.handleOk}/>}
+          { this.props.isArtistForm && <ArtistForm onRef={ref => (this.child = ref)} updateCallBack={this.props.updateCallBack} handleOk={this.handleOk}/>}
+          { this.props.isAlbumForm && <AlbumForm onRef={ref => (this.child = ref)} updateCallBack={this.props.updateCallBack} handleOk={this.handleOk}/>}
+          { this.props.isSongForm && <SongForm onRef={ref => (this.child = ref)} updateCallBack={this.props.updateCallBack} handleOk={this.handleOk}/>}
 
         </Modal>
       </div>

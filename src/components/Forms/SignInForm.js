@@ -4,8 +4,6 @@ import { Row, Col, Layout, Form, Icon, Input, Button, Checkbox, } from 'antd';
 import axios from 'axios';
 import  { Redirect } from 'react-router-dom'
 
-
-
 const FormItem = Form.Item;
 
 class SignInForm extends Component {

@@ -3,8 +3,6 @@ import { Form, Input, Button, Select } from 'antd';
 import axios from 'axios';
 import  { Redirect } from 'react-router-dom'
 
-
-
 const FormItem = Form.Item;
 const Option = Select.Option;
 
@@ -18,9 +16,15 @@ class ArtistForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirect = this.redirect.bind(this);
   }
+  componentDidMount() {
+    this.props.onRef(this)
+  }
+  componentWillUnmount() {
+    this.props.onRef(undefined)
+  }
 
   handleSubmit(e){
-    e.preventDefault();
+    if (e) e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
@@ -83,12 +87,6 @@ class ArtistForm extends Component {
               <Option value="person">Person</Option>
               <Option value="group">Group</Option>
             </Select>)}
-          </FormItem>
-
-          <FormItem>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Create
-            </Button>
           </FormItem>
         </Form>
       );

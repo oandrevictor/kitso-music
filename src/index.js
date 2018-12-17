@@ -8,6 +8,7 @@ import Topbar from './components/Topbar/Topbar';
 import Profile from './components/Mains/Profile/Profile';
 import Trending from './components/Mains/Trending/Trending';
 import SignIn from './components/Mains/SignIn/SignIn';
+import Song from './components/Mains/Song/Song';
 
 function requireAuth(component){
   if (!JSON.parse(localStorage.getItem("current_user"))){
@@ -42,6 +43,8 @@ ReactDOM.render(
             <Route path="/login" render={()=> notLoggedOnly(<SignIn />)} />
             <Route path="/profile" render={()=> requireAuth(<Profile />)}/>
             <Route path="/trending" render={()=> requireAuth(<Trending />)}/>
+            <Route path="/song/:id" render={()=> requireAuth(<Song />)}/>
+
             <Route path="/" render={()=> loggedOrNotLogged("/profile", "/login")}/>
 
         </Switch>

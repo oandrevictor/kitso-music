@@ -74,16 +74,16 @@ class Trending extends Component {
 
     <Row type="flex" >
       <Col span={24} className="card-row" >
-        <h1>Top <span className="accent">Artists</span> <FormModal updateCallBack={this.updatePerformers} isArtistForm={true} /></h1>
-        <SimpleCardGrid data={performer_list} />
+        <h1>Top <span className="accent">Artists</span> <FormModal title="New Artist" updateCallBack={this.updatePerformers} isArtistForm={true} /></h1>
+        <SimpleCardGrid data={performer_list} type="artist" />
       </Col>
       <Col span={24} className="card-row">
-        <h1>Top <span className="accent">Albuns</span> <FormModal updateCallBack={this.updateAlbuns} isAlbumForm={true}/></h1>
-        <SimpleCardGrid data={albuns_list} />
+        <h1>Top <span className="accent">Albuns</span> <FormModal title="New Album" updateCallBack={this.updateAlbuns} isAlbumForm={true}/></h1>
+        <SimpleCardGrid data={albuns_list} type="album" />
       </Col>
       <Col span={24} className="card-row">
-        <h1>Top <span className="accent">Songs</span> <FormModal updateCallBack={this.updateSongs} isSongForm={true} /></h1>
-        <SimpleCardGrid data={songs_list} />
+        <h1>Top <span className="accent">Songs</span> <FormModal title="New Song" updateCallBack={this.updateSongs} isSongForm={true} /></h1>
+        <SimpleCardGrid data={songs_list} type="song" />
       </Col>
      </Row>
      </div>

@@ -5,8 +5,12 @@ import SimpleCard from '../SimpleCard/SimpleCard';
 const { Meta } = Card;
 
 class SimpleCardGrid extends Component {
+  constructor(props){
+    super(props)
+  }
 
   render() {
+    var that = this;
     return (
       <div>
       <Row type="flex" justify="left">
@@ -15,7 +19,7 @@ class SimpleCardGrid extends Component {
               function(item) {
                 return (
                   <Col key={item._id} span={3}>
-                    <SimpleCard key={item._id} title={item.name || item.title} subtitle={item.name} image={item.fallback_image || item.image} />
+                    <SimpleCard type={that.props.type} key={item._id} id={item._id} title={item.name || item.title} subtitle={item.name} image={item.fallback_image || item.image} />
                   </Col>
                 )
               }

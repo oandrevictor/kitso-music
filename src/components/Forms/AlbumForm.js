@@ -4,7 +4,6 @@ import axios from 'axios';
 import  { Redirect } from 'react-router-dom'
 import reqwest from 'reqwest';
 
-
 const FormItem = Form.Item;
 const Option = Select.Option;
 
@@ -18,7 +17,7 @@ class AlbumForm extends Component {
   }
 
   handleSubmit(e){
-    e.preventDefault();
+    if (e) e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
@@ -40,7 +39,11 @@ class AlbumForm extends Component {
   }
 
   componentDidMount() {
+    this.props.onRef(this);
     this.updatePerformers();
+  }
+  componentWillUnmount() {
+    this.props.onRef(undefined)
   }
 
   getData = (url, callback) => {
@@ -113,12 +116,6 @@ class AlbumForm extends Component {
             }
             </Select>
           )}
-          </FormItem>
-
-          <FormItem>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Create
-            </Button>
           </FormItem>
         </Form>
       );
