@@ -10,7 +10,7 @@ O Kitso Music é uma plataforma que permite ao usuário gerenciar o que ele ouvi
 * Visualizar informaçes específicas sobre uma música (/music/id)
 * Visualização de perfil mockado (/profile)
 
-## Conta para testes
+## Conta exemplo
 (Vale lembrar que o registro de novas contas está funcionando no sistema)
 ```
 login: abcde
@@ -24,7 +24,7 @@ npm install
 npm start
 ```
 
-#### Como testar?:
+#### Como testar?
 ```
 npm test
 ```
